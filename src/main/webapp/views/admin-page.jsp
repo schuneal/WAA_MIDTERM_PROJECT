@@ -32,13 +32,13 @@
 		<a href="createPerson">Create Person</a>
 	</h3>
 	<h3>
-		<a href="list-person">List of Person</a>
+		<a href="listPerson">List of Person</a>
 	</h3>
 	<hr />
 
 	<h2>Order</h2>
 	<h3>
-		<a href="list-order">List of Orders</a>
+		<a href="listOrder">List of Orders</a>
 	</h3>
 	
 	<hr />

@@ -16,18 +16,26 @@
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Email</th>
-			<th>Address</th>
+			<th>City</th>
+			<td>State</td>
+			<td>Country</td>
+			<td>ZIP Code</td>
 			<th>Phone</th>
 			<th>Enable</th>
+			
 		</tr>
 		<tr>
 			<td>${person.firstName}</td>
 			<td>${person.lastName}</td>
 			<td>${person.email}</td>
-			<td>${person.address}</td>
+			<td>${person.address.city}</td>
+			<td>${person.address.state}</td>
+			<td>${person.address.country}</td>
+			<td>${person.address.zipcode}</td>
+	
 			<td>${person.phone}</td>
 			<td>${person.enable}</td>
-			<td><a href="#">Edit</a></td>
+			<td><a href="/person/${person.id}">Edit</a></td>
 		</tr>
 	</table>
 	<br />
