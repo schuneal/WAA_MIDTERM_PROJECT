@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import edu.mum.coffee.domain.Person;
+import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.repository.PersonRepository;
 
 @Service
@@ -15,7 +16,7 @@ public class PersonService {
 
 	@Autowired
 	private PersonRepository personRepository;
-
+	
 	public List<Person> getAllPerson() {
 		return  personRepository.findAll() ;
 	}

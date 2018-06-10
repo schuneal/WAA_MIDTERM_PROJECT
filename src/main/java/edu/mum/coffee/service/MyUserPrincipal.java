@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import edu.mum.coffee.domain.User;
 
 public class MyUserPrincipal extends User implements UserDetails {
-
+	
 	public MyUserPrincipal(final User user) {
 		super(user);
 	}
@@ -24,10 +24,10 @@ public class MyUserPrincipal extends User implements UserDetails {
 		List<String> roles = new ArrayList<>();
 		roles.add(role);
 //		SimpleGrantedAuthority k = new SimpleGrantedAuthority("Role_"+role);
-
-
+		
+		
 		return roles.stream().map(r -> new SimpleGrantedAuthority("ROLE_"+r)).collect(Collectors.toList());
-
+		
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class MyUserPrincipal extends User implements UserDetails {
 		// TODO Auto-generated method stub
 		return super.getUsername();
 	}
-
+	
 	public String getRole() {
 		return super.getRole();
 	}

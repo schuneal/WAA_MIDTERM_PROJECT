@@ -25,6 +25,10 @@ public class UserService {
 		return userRepository.findByUsername(username);
 	}
 
+	public User findById(String id) {
+		return userRepository.findOne(id);
+	} 
+	
 	public void removeUser(User user) {
 		userRepository.delete(user);
 	}
