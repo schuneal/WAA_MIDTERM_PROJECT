@@ -9,8 +9,8 @@
 <title>Add Product</title>
 </head>
 <body>
-	<h1><em>Please enter the product details below</em></h1>
-	<a href="<c:url value="/logout" />"> Now logout </a>
+	<h1>Please enter the product details below</h1>
+	<a href="<c:url value="/logout" />"> logout </a>
 
 	<form:form action="createProduct" modelAttribute="product" method="POST">
 		<table>

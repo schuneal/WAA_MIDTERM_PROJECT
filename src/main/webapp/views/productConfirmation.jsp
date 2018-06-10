@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Books currently in the shop</title>
+<title></title>
 </head>
 <body>
 	<h1>Your product is added successfully</h1>

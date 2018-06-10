@@ -10,9 +10,9 @@
 </head>
 <body>
 	<h1>
-		<em>Please enter the Person details below</em>
+		Please enter the Person details below
 	</h1>
-	<a href="<c:url value="/logout" />"> Now logout </a>
+	<a href="<c:url value="/logout" />"> logout </a>
 
 	<form:form action="createPerson" modelAttribute="personCreator" method="POST">
 		<table>

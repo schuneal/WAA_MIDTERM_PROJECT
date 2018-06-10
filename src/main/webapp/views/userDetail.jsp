@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h2>Update Profile</h2>
-	<a href="<c:url value="/logout" />"> Now logout </a>
+	<a href="<c:url value="/logout" />"> logout </a>
 
 	<form action="updateprofile" method="post">
 	<table>

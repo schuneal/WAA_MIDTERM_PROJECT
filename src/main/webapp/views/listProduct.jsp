@@ -8,9 +8,9 @@
 <title>Products currently in the shop</title>
 </head>
 <body>
-	<a href="<c:url value="/logout" />"> Now logout </a>
+	<a href="<c:url value="/logout" />"> logout </a>
 
-	<h1>Available Products List</h1>
+	<h1>Products List</h1>
 	<table border="2pt">
 	<tr><th>Product ID</th>
 		<th>Product Name</th>

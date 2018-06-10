@@ -8,8 +8,8 @@
 <title>Welcome Page</title>
 </head>
 <body>
-	<h3>Admin Welcome ${person.firstName} </h3>
-	<a href="<c:url value="/logout" />"> Now logout </a>
+	<h3>Admin:  Welcome ${person.firstName} </h3>
+	<a href="<c:url value="/logout" />"> logout </a>
 
 	<hr />
 	<h2>Product</h2>

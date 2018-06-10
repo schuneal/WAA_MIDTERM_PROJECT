@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Add a Car</title>
+<title></title>
 </head>
 <body>
 	<a href="<c:url value="/logout" />"> Now logout </a>

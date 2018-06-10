@@ -8,7 +8,7 @@
 <title>List of Orders</title>
 </head>
 <body>
-	<a href="<c:url value="/logout" />"> Now logout </a>
+	<a href="<c:url value="/logout" />"> logout </a>
 
 	<h1>List of Orders</h1>
 	<table border="2pt">
