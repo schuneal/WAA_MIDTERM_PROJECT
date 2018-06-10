@@ -6,20 +6,20 @@ import javax.persistence.Id;
 
 @Entity
 public class User {
-
+	
 	@Id
 	@GeneratedValue
 	private int id;
 	private String username;
 	private String password;
 	private String role;
-
+	
 	public User() {
-
+		
 	}
 
 	public User(String username, String password, String role) {
-
+		
 		this.username = username;
 		this.password = password;
 		this.role = role;
@@ -35,7 +35,7 @@ public class User {
 		return id;
 	}
 
-
+	
 	public String getUsername() {
 		return username;
 	}
@@ -59,6 +59,6 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
+	
 
 }
