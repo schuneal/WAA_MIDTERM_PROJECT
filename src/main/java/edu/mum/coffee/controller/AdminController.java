@@ -49,6 +49,7 @@ public class AdminController {
 	@RequestMapping(value="/createProduct", method=RequestMethod.POST)
 	public String createProductPOST(@Valid @ModelAttribute("product") Product product, 
 									BindingResult result) {
+		System.out.println("-----Post method Reached------");
 		
 		if(result.hasErrors()) {
 			return "redirect:/createProduct";
@@ -91,11 +92,15 @@ public class AdminController {
 		model.addAttribute("products", products);
 		
 		return "listProduct";
-
+		
+//		carDao.update(id, car); // car.id already set by binding
+//		return "redirect:/cars";
 	}
 	
 	@RequestMapping(value="/product/delete", method=RequestMethod.POST)
 	public String delete( @RequestParam int productId) {
+		//int productId =Integer.parseInt(id);
+		System.out.println(">>>>delete>>>>>>");
 		Product p = productService.getProduct(productId);
 		productService.delete(p);
 		
@@ -167,7 +172,7 @@ public class AdminController {
 
 	@RequestMapping(value="/person/{personId}", method=RequestMethod.GET)
 	public String get(@PathVariable long personId, Model model) {
-		//System.out.println(">>Update Controller -> Person ID: "+personId);
+		System.out.println(">>Update Controller -> Person ID: "+personId);
 		
 		System.out.println("Before findByID");
 		Person person = personService.findById(personId);
@@ -207,6 +212,7 @@ public class AdminController {
 		p.setLastName(pc.getLastName());
 		p.setEmail(pc.getEmail());
 		p.setPhone(pc.getPhone());
+		
 		System.out.println("Created person: "+p.getFirstName());
 		
 		User user = userService.findByUsername(p.getEmail());
