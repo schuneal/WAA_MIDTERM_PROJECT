@@ -49,8 +49,7 @@ public class AdminController {
 	@RequestMapping(value="/createProduct", method=RequestMethod.POST)
 	public String createProductPOST(@Valid @ModelAttribute("product") Product product, 
 									BindingResult result) {
-		System.out.println("-----Post method Reached------");
-		
+
 		if(result.hasErrors()) {
 			return "redirect:/createProduct";
 		}
@@ -92,9 +91,6 @@ public class AdminController {
 		model.addAttribute("products", products);
 		
 		return "listProduct";
-		
-//		carDao.update(id, car); // car.id already set by binding
-//		return "redirect:/cars";
 	}
 	
 	@RequestMapping(value="/product/delete", method=RequestMethod.POST)
@@ -123,9 +119,7 @@ public class AdminController {
 	@RequestMapping(value="/createPerson", method=RequestMethod.POST)
 	public String createPersonPOST(@Valid @ModelAttribute("personCreator") PersonCreator personCreator, 							   
 								   BindingResult result, RedirectAttributes ra) {
-		//Person check = personService.findByEmail(personCreator.getEmail()).get(0);
-		
-		//if(check==null) {
+
 		Address address = new Address();
 		address.setCity(personCreator.getCity());
 		address.setState(personCreator.getState());
@@ -158,8 +152,6 @@ public class AdminController {
 			personService.savePerson(person);			
 			return "redirect:/personConfirmation";
 		}
-		//}
-		//return "redirect:/createPerson";
 	}
 	
 	@RequestMapping(value="/listPerson")
@@ -172,20 +164,16 @@ public class AdminController {
 
 	@RequestMapping(value="/person/{personId}", method=RequestMethod.GET)
 	public String get(@PathVariable long personId, Model model) {
-		System.out.println(">>Update Controller -> Person ID: "+personId);
-		
-		System.out.println("Before findByID");
+
 		Person person = personService.findById(personId);
 		System.out.println("After findByID -- Email: "+person.getEmail());
 		
 		Address address = person.getAddress();
-		//System.out.println("After findByID -- Adrees: "+address.getCity());
+
 		
-		System.out.println("Before Fetching user: ");
+
 		User user = userService.findByUsername(person.getEmail());
-		System.out.println("After Fetching user: ");
-		System.out.println("User Name: "+user.getUsername());
-		
+
 		PersonCreator pc = new PersonCreator();
 		pc.setId(person.getId());
 		pc.setFirstName(person.getFirstName());
@@ -199,7 +187,6 @@ public class AdminController {
 		pc.setPassword(user.getPassword());
 		
 		model.addAttribute("person", pc);
-		System.out.println("Returned personDetail");
 		return "personDetail";
 	}
 	
@@ -218,7 +205,7 @@ public class AdminController {
 		User user = userService.findByUsername(p.getEmail());
 		user.setPassword(pc.getPassword());
 		
-		System.out.println("Set Password: "+user.getPassword());
+
 		
 		Address address = p.getAddress();
 		address.setCity(pc.getCity());
@@ -227,7 +214,7 @@ public class AdminController {
 		address.setZipcode(pc.getZipcode());
 		
 		p.setAddress(address);		
-		System.out.println("Finally Added Addres"+p.getAddress().getCity());
+
 
 		List<Person> persons = personService.getAllPerson();
 		model.addAttribute("persons", persons);
