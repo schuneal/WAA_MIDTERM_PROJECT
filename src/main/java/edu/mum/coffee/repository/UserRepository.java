@@ -8,7 +8,7 @@ import edu.mum.coffee.domain.Person;
 import edu.mum.coffee.domain.User;
 
 public interface UserRepository extends JpaRepository<User, String>{
-
+	
 
 	public User findByUsername(String username);
 }
